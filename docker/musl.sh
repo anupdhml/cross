@@ -38,12 +38,12 @@ main() {
     td="$(mktemp -d)"
 
     pushd "${td}"
-    curl -L https://github.com/richfelker/musl-cross-make/archive/v0.9.8.tar.gz | \
+    curl -L https://github.com/richfelker/musl-cross-make/archive/v0.9.9.tar.gz | \
         tar --strip-components=1 -xz
 
     hide_output make install "-j$(nproc)" \
-        GCC_VER=6.4.0 \
-        MUSL_VER=1.1.22 \
+        GCC_VER=9.2.0 \
+        MUSL_VER=1.2.0 \
         DL_CMD='curl -C - -L -o' \
         OUTPUT=/usr/local/ \
         "${@}"
